@@ -21,7 +21,6 @@
 				<br><br>
         <label>State : </label>
         <select id="state">
-        	<option value=""></option>
         </select>
         <br><br>
         <label>City : </label>
@@ -63,7 +62,7 @@
     
             $("#state").on("change",function(){
                 var state = $("#state").val();
-                alert(state);
+                //alert(state);
                 if(state != ""){
                      function loadData1(){
                      var type ="cityData"
@@ -73,7 +72,7 @@
                          type:"POST",
                          data:{type:type,state_id:state},
                          success:function(data){
-                             alert(data);
+                             //alert(data);
                              if(type == "cityData"){
                                  $("#city").html(data);
                              }else{
@@ -82,8 +81,8 @@
                          }
                      });
                  }
-                 loadData1();
-                    alert(state);
+                // loadData1();
+                    //alert(state);
                     loadData1("cityData", state);
                 }else{
                     $("#city").html("");

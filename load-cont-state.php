@@ -16,7 +16,7 @@ $str="";
     $sql_state="SELECT * FROM states WHERE country_id= {$_POST['id']}";
     $state_query=mysqli_query($conn,$sql_state);
 
-    $str = "";
+    $str="<option value=''>Select State</option>";
    // if($state_num_rows=mysqli_num_rows($state_query)>0){
         while($state_fetch_assoc=mysqli_fetch_assoc($state_query)){
             $str .="<option value='{$state_fetch_assoc['id']}'>{$state_fetch_assoc['name']}</option>";
@@ -30,7 +30,7 @@ $str="";
     $sql_city="SELECT * FROM cities WHERE state_id={$state_id}";
     $city_query=mysqli_query($conn,$sql_city);
     
-    $str= "";
+    $str="<option value=''>Select City</option>";
     while($city_fetch_assoc=mysqli_fetch_assoc($city_query)){
         $str .="<option value='{$city_fetch_assoc['id']}'>{$city_fetch_assoc['name']}</option>";
     }
